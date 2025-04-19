@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+        width: 300px;
+        height: 300px;
+        background-color: rgb(184, 240, 80);
+        padding: 50px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform-style: flat;
+        }
+    
+        
+    </style>
+</head>
+<body>
+    <div id="box">
+    <input type="text" id="inp">
+        <h1 id="h">Here you are</h1>
+    <button onclick="run()">Start</button>
+</div>
+   <script>
+    function run(){
+  let num=document.getElementById("inp").value
+
+  function show(){
+
+    document.getElementById("h").innerHTML=num
+    num--
+    if (num<0){
+        clearInterval(interval)
+        document.getElementById("h").innerHTML="Times's Up"
+    }
+    }
+    document.getElementById("inp").value=" "
+    let interval=setInterval(show,1000)
+    }
+   </script>
+</body>
+</html>
